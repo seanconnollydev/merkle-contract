@@ -1,0 +1,12 @@
+# !/bin/bash
+
+# Read env vars
+
+echo "Reading vars from .env.forge"
+source .env.forge
+
+# Run Deploy
+
+echo "Deploying MerkleProofVerifier.sol"
+
+forge create src/MerkleProofVerifier.sol:MerkleProofVerifier --rpc-url $RPC_URL --private-key $SCRIPT_PRIVATE_KEY --verify --etherscan-api-key $ETHERSCAN_API_KEY
